@@ -15,12 +15,12 @@ node {
    
    // -- Descarga código desde SCM
    echo 'Descargando código de SCM'
-   sh 'rm -rf *'
+   bat 'rm -rf *'
    checkout scm
    
    // -- Compilando
    echo 'Compilando aplicación'
-   sh'mvn clean compile'
+   bat'mvn clean compile'
    
    // ------------------------------------
    // -- ETAPA: Test
@@ -42,7 +42,7 @@ node {
    // ------------------------------------
    stage 'Instalar'
    echo 'Instala el paquete generado en el repositorio maven'
-   sh 'mvn install -Dmaven.test.skip=true'
+   bat'mvn install -Dmaven.test.skip=true'
    
    // ------------------------------------
    // -- ETAPA: Archivar
